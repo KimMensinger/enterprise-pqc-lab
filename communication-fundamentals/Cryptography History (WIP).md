@@ -17,6 +17,8 @@ For most of cryptographic history, encryption was symmetric: both sides needed t
 
 The earliest signs of cryptography go back thousands of years, long before computers, PKI, TLS, or modern encryption. The basic human need was the same: hide meaning from anyone who was not supposed to understand the message.
 
+Cryptography started as clever writing tricks, then became a tool for religion, trade secrecy, military command, diplomacy, and eventually mathematics.
+
 The earliest known examples are usually traced to ancient Egypt, around 1900 BCE, where scribes used non-standard hieroglyphs in tomb inscriptions. This was not “encryption” in the modern military or mathematical sense, but it shows an early instinct to obscure meaning and make writing understandable only to certain people.
 
 The core issue was key distribution. If every pair of people, systems, banks, militaries, servers, or applications needed a shared secret, the number of keys explodes. You do not yet have PKI here. You only have the problem PKI will eventually help solve.
