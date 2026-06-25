@@ -25,6 +25,19 @@ The earliest known examples are usually traced to ancient Egypt, around 1900 BCE
 
 In 1976, Whitfield Diffie and Martin Hellman published “New Directions in Cryptography.” This introduced the public idea of asymmetric cryptography: a system where a person can have a public key and a private key, and the public key does not need to be kept secret.  
 
+The 1976 Diffie-Hellman paper mattered because it attacked the oldest practical problem in cryptography:
+
+How do two people who have never met create a shared secret over an insecure channel?
+
+Before 1976, that sounded almost impossible.
+
+
+
+
+
+
+
+
 The core issue was key distribution. If every pair of people, systems, banks, militaries, servers, or applications needed a shared secret, the number of keys explodes. You do not yet have PKI here. You only have the problem PKI will eventually help solve.
 
 IN 1976, Ralph Merkle published one of the first protocosl to securely generate a symmetric cryptographic key over a public channel. Before this, systems that were communicating to one another had to know about each other in order for them to trust them. With DH, it makes it possible for two systems to securely establish a shared secret key over a insecure channel. 
