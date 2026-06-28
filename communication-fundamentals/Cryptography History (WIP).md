@@ -82,9 +82,23 @@ It important to note that the paper that  Diffie Hellman released in 1976, "New 
 
 So that is how two parties could retain the cofidentiality of their messages. By using the public key and mixing in their private components and sharing that over to the other party to create a shared secret, they are able to establish a secure channel of communication without having the secure channel already present. 
 
-##How was Digital Signatures Introduced by Diffie Hellman? 
+## How was Digital Signatures Introduced by Diffie Hellman? 
 
-Fro digital signatures, we have to think about the keys inversely. 
+Fro digital signatures, we have to think about the keys inversely. For the confidentiality portion, we use the public key to encrypt and use the private key to decrypt. For digital signatures, we sign with the sender's private key and use the public key to verify. This does multiple things: it provides non-repudiation for the sender. That means that we can prove that the sender actually sent the message from them having their private key. This also provides the safety that the message was not altered in any way. These concepts because crucial and become the main components to certificates. A Certificate Authority signs with their private key. While everyone else uses the public key to verify that certificate is using the CA's public key. 
+
+As a recap, we talked about many things. We have gone through components of public key cryptography that came from the concepts of the publication "New Directions In Cryptography". This established how we can secure a channel of communication over a environment that is insecure foundationaly. We then moved to the how Diffie Hellman then introduced concepts of making sure that the message that was being sent over the channel actually came from the sender. It also ensures that the message was not altered in the process communication exchanges with the production of hashing. This would cover all elements of the CIA Triad and created a foundation of how communication is completed today. 
+
+But there was still a major issue. Yes, DH solved how to share a secret over a insecure channel, but how do I know that I actually am connecting with the right person to begin with. This is the classic man-in-the-middle problem where a threat actor sits in the middle of the communication and establishes trust with Alice and Bob by sharing their shared secret with them. Alice and bob would not be able to tell whose public key they are actually using. This is where PKI came in. 
+
+Public key is just a number. There is no way for us to bind that number with a identity. This is where certificates come in. A simplifed certificate may include: Subject: example.com
+Public key: 03:AB:91:...
+Issuer: DigiCert
+Valid from: date
+Valid until: date
+Signature: signed by DigiCert
+
+The CA's signature is what ensures the validity of the certificate and that the CA vouched for the certificate. The 1976 didn't merely create these concepts out of thin air, but in reality, it created the concepts which led to the downstream innovation of cryptgraphy/communication. 
+
 
 IN 1976, Ralph Merkle published one of the first protocosl to securely generate a symmetric cryptographic key over a public channel. Before this, systems that were communicating to one another had to know about each other in order for them to trust them. With DH, it makes it possible for two systems to securely establish a shared secret key over a insecure channel. 
 
